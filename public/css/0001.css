@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+main {
+    text-align: center;
+    padding: 55px;
+}
+
+input {
+    margin: 0 auto;
+    width: 250px;
+    height: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+}

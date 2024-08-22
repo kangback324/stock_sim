@@ -1,0 +1,195 @@
+body {
+  margin: 0px;
+}
+
+main {
+  overflow: hidden;
+  width: 100%;
+  height: 96.9vh;
+  display: flex;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#left {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+#right {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+#stock_menu {
+  overflow: hidden;
+  display: flex;
+  height: 60%;
+}
+
+#stocks {
+  overflow: scroll;
+  height: 100%;
+  width: 75%;
+}
+
+#buysell_menu {
+  overflow: hidden;
+  border-left: 1px solid #dbdbdc;
+  height: 100%;
+  width: 25%;
+}
+
+#buysell_menu p {
+  font-size: 13px;
+}
+
+#buy {
+  overflow: hidden;
+  background-color: #f5d1cc;
+  height: 50%;
+  width: 100%;
+}
+
+#sell {
+  overflow: hidden;
+  background-color: #c8ddf0;
+  border-top: 1px solid #dbdbdc;
+  height: 50%;
+  width: 100%;
+}
+
+#account {
+  overflow: scroll;
+  border-top: 1px solid #dbdbdc;
+  height: 40%;
+  width: 100%;
+}
+
+#news {
+  padding: 10px;
+  overflow: scroll;
+  height: 60%;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdc;
+  border-left: 1px solid #dbdbdc;
+}
+
+#buysell_log {
+  padding: 10px;
+  overflow: scroll;
+  border-left: 1px solid #dbdbdc;
+  height: 40%;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  margin: 0 0 0 5px;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+form {
+  overflow: hidden;
+  padding: 5px;
+}
+
+td,
+th,
+table {
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#stock_menu th {
+  overflow: hidden;
+  background-color: #dbe3ee;
+  padding: 0 45px;
+}
+
+#stock_menu td {
+  overflow: hidden;
+  text-align: center;
+}
+
+#stock_menu table {
+  overflow: hidden;
+  padding: 20px 50px;
+}
+
+#account th {
+  overflow: hidden;
+  background-color: #dbe3ee;
+  padding: 0px 70px;
+}
+
+#account td {
+  overflow: hidden;
+  text-align: center;
+}
+
+#account table {
+  overflow: hidden;
+  padding: 10px 50px;
+}
+
+.g {
+  background-color: #ececec;
+}
+
+input {
+  border: 1px solid #a6b4c3;
+  height: 20px;
+}
+
+input[type="submit"] {
+  margin-top: 7px;
+  height: 25px;
+  width: 150px;
+}
+
+select {
+  width: 168px;
+}
+
+/* 전체 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 12px; /* 스크롤바의 너비 설정 */
+}
+
+/* 스크롤바 트랙(배경) 스타일링 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 기본 배경색 설정 */
+}
+
+/* 스크롤바 썸(스크롤바 이동 가능한 부분) 스타일링 */
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7; /* 썸의 기본 색상 설정 */
+}
+
+/* 썸이 호버되었을 때의 스타일링 */
+::-webkit-scrollbar-thumb:hover {
+  background: #eaeaea; /* 호버 시에도 같은 색상 유지 */
+}
+
+#buysell_log p {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 20px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/0001.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>마늘투자증권</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="img/logo_none.png" alt=""></li>
+            <li>마늘투자증권</li>
+            <li>[0001] 계좌개설</li>
+        </ul>
+    </nav>
+    <main>
+        <h1>계좌개설</h1>
+        <p>아래정보를 적절히 입력해주세요</p>
+        <form action="/signup" method="post">
+            <input type="text" placeholder="ID" name="id">
+            <input type="password" placeholder="비밀번호" name="password">
+            <input type="submit" value="계좌 개설하기">
+            <a href="/login">로그인</a>
+        </form>
+    </main>
+</body>
+</html>

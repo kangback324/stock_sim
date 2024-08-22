@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/css/1000.css">
+            <link rel="stylesheet" href="/css/nav.css">
+            <title>마늘투자증권</title>
+        </head>
+        <body>
+            <nav>
+                <ul>
+                    <li><img src="/img/logo_none.png" alt=""></li>
+                    <li>마늘투자증권</li>
+                    <li>[1000] 주식종합</li>
+                </ul>
+            </nav>
+            <main>
+                <div id="left">
+                    <div id="stock_menu">
+                        <div id="stocks">
+                            <h1 style="margin-left: 50px; position: relative; top: 10px;">주식 정보</h1>
+                            <table>
+                                <tr>
+                                    <th>종목명</th>
+                                    <th>현재가</th>
+                                    <th>대비(전 가격)</th>
+                                    <th>동락률(전 가격)</th>
+                                    <th>현재 상태</th>
+                                </tr>
+                                <tr>
+                                    <td>문경테크놀로지</td>
+                                    <td><span id="1_price">-</span>원</td>
+                                    <td><span id="1_pmprice">-</span>원</td>
+                                    <td><span id="1_per">-</span>%</td>
+                                    <td id="1_status">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="g">은수에어로스페이스</td>
+                                    <td class="g"><span id="2_price">-</span>원</td>
+                                    <td class="g"><span id="2_pmprice">-</span>원</td>
+                                    <td class="g"><span id="2_per">-</span>%</td>
+                                    <td class="g" id="2_status">-</td>
+                                </tr>
+                                <tr>
+                                    <td>현우바이오</td>
+                                    <td><span id="3_price">-</span>원</td>
+                                    <td><span id="3_pmprice">-</span>원</td>
+                                    <td><span id="3_per">-</span>%</td>
+                                    <td id="3_status">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="g">은찬식품</td>
+                                    <td class="g"><span id="4_price">-</span>원</td>
+                                    <td class="g"><span id="4_pmprice">-</span>원</td>
+                                    <td class="g"><span id="4_per">-</span>%</td>
+                                    <td class="g" id="4_status">-</td>
+                                </tr>
+                                <tr>
+                                    <td>규빈메디컬</td>
+                                    <td><span id="5_price">-</span>원</td>
+                                    <td><span id="5_pmprice">-</span>원</td>
+                                    <td><span id="5_per">-</span>%</td>
+                                    <td id="5_status">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="g">기태스틸</td>
+                                    <td class="g"><span id="6_price">-</span>원</td>
+                                    <td class="g"><span id="6_pmprice">-</span>원</td>
+                                    <td class="g"><span id="6_per">-</span>%</td>
+                                    <td class="g" id="6_status">-</td>
+                                </tr>
+                            </table>
+                            <h1 style="margin-left: 50px; margin-bottom: 10px;">로그인 정보</h1>
+                            <p style="margin-left: 50px;">ID : <span id="user_id"></span></p>
+                            <p style="margin-left: 50px;">계좌 보유 금액 : <span id="money"></span>원</p>
+                            <a href="/signup" style="display: block; margin-left: 50px; margin-top: 10px; text-decoration: none;">다른 계좌 개설하러 가기</a>
+                        </div>
+                        <div id="buysell_menu">
+                            <div id="buy">
+                                <h1 style="color: #EA6B61;">매수</h1>
+                                <form action="/stock/buy" method="post">
+                                    <p>매수할 종목</p>
+                                    <select name="stock_name">
+                                        <option value="문경테크놀로지">문경테크놀로지</option>
+                                        <option value="은수에어로스페이스">은수에어로스페이스</option>
+                                        <option value="현우바이오">현우바이오</option>
+                                        <option value="은찬식품">은찬식품</option>
+                                        <option value="규빈메디컬">규빈메디컬</option>
+                                        <option value="기태스틸">기태스틸</option>
+                                    </select>
+                                    <p>가격</p>
+                                    <input type="text" value="현재가" disabled style="background-color: #FEFDDE;">
+                                    <p>수량</p>
+                                    <input min='1' type="number" placeholder="주" name="number">
+                                    <input type="submit" value="현금 매수 (Eenter)" style="background-color: #EE2E6E; color: white;">
+                                </form>
+                            </div>
+                            <div id="sell">
+                                <h1 style="color: #4D7BC5;">매도</h1>
+                                <form action="/stock/sell" method="post">
+                                    <p>매도할 종목</p>
+                                    <select name="stock_name">
+                                        <option value="문경테크놀로지">문경테크놀로지</option>
+                                        <option value="은수에어로스페이스">은수에어로스페이스</option>
+                                        <option value="현우바이오">현우바이오</option>
+                                        <option value="은찬식품">은찬식품</option>
+                                        <option value="규빈메디컬">규빈메디컬</option>
+                                        <option value="기태스틸">기태스틸</option>
+                                    </select>
+                                    <p>가격</p>
+                                    <input type="text" value="현재가" disabled style="background-color: #FEFDDE;">
+                                    <p>수량</p>
+                                    <input min='1' type="number" placeholder="주" name="number">
+                                    <input type="submit" value="현금 매도 (Eenter)" style="background-color: #305DB6; color: white;">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="account">
+                        <h1 style="margin-left: 50px; position: relative; top: 5px;">계좌</h1>
+                        <table>
+                            <tr>
+                                <th>종목명</th>
+                                <th>주</th>
+                                <th>평단가</th>
+                                <th>수익금</th>
+                                <th>수익률</th>
+                            </tr>
+                            <tr>
+                                <td id="1_ac_name"></t>
+                                <td id="1_ac_number"></td>
+                                <td id="1_ac_aver"></td>
+                                <td id="1_ac_price_money"></td>
+                                <td id="1_ac_per"></td>
+                            </tr>
+                            <tr>
+                                <td class="g" id="2_ac_name"></t>
+                                <td class="g" id="2_ac_number"></t>
+                                <td class="g" id="2_ac_aver"></td>
+                                <td class="g" id="2_ac_price_money"></td>
+                                <td class="g" id="2_ac_per"></td>
+                            </tr>
+                            <tr>
+                                <td id="3_ac_name"></t>
+                                <td id="3_ac_number"></td>
+                                <td id="3_ac_aver"></td>
+                                <td id="3_ac_price_money"></td>
+                                <td id="3_ac_per"></td>
+                            </tr>
+                            <tr>
+                                <td class="g" id="4_ac_name"></t>
+                                <td class="g" id="4_ac_number"></t>
+                                <td class="g" id="4_ac_aver"></td>
+                                <td class="g" id="4_ac_price_money"></td>
+                                <td class="g" id="4_ac_per"></td>
+                            </tr>
+                            <tr>
+                                <td id="5_ac_name"></t>
+                                <td id="5_ac_number"></td>
+                                <td id="5_ac_aver"></td>
+                                <td id="5_ac_price_money"></td>
+                                <td id="5_ac_per"></td>
+                            </tr>
+                            <tr>
+                                <td class="g" id="6_ac_name"></t>
+                                <td class="g" id="6_ac_number"></t>
+                                <td class="g" id="6_ac_aver"></td>
+                                <td class="g" id="6_ac_price_money"></td>
+                                <td class="g" id="6_ac_per"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="news">
+                        <h1>공지</h1>
+                    </div>
+                    <div id="buysell_log">
+                        <h1>자산 순위</h1>
+                        <p>1위 <span id="r_1"></span></p>
+                        <p>2위 <span id="r_2"></span></p>
+                        <p>3위 <span id="r_3"></span></p>
+                        <p>4위 <span id="r_4"></span></p>
+                        <p>5위 <span id="r_5"></span></p>
+                    </div>
+                </div>
+            </main>
+            <script src="socket.io/socket.io.js"></script>
+            <script src="/javascript/1000.js"></script>
+        </body>
+        </html> 
