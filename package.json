@@ -4,7 +4,8 @@
   "description": "모의투자 사이트",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:prod": "NODE_ENV=production node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,3 +22,4 @@
     "socket.io": "^4.7.5"
   }
 }
+
