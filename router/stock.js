@@ -1,5 +1,4 @@
 const pool = require('../lib/db.js');
-const session = require('express-session');
 const isowner = require('../lib/checkowner.js');
 const path = require('path');
 var express = require('express');
@@ -76,7 +75,7 @@ router.get('/', async (req, res) => {
         return;
       }
       const [user] = await db.query('select user_id ,account_id, money from user where user_id=?',[req.session.user_id]);
-      const [user_account] = await db.query('select * from stock_user where account_id=?',[user[0].account_id]);
+      // const [user_account] = await db.query('select * from stock_user where account_id=?',[user[0].account_id]);
       const [stock] = await db.query('select stock_id, price, status from stock_inform where name=?',[sell.stock_name]);
       if (stock[0].status === 'N') {
         res.status(400).send('<script>alert("상장폐지된 종목입니다."); window.location.href="/stock";</script>');
@@ -109,4 +108,4 @@ router.get('/', async (req, res) => {
   module.exports = router;
 // 구매
 // 판매
-///할때마다 계좌 조회도 같이 해야댐
+///할때마다 계좌 조회도 같이 해야 됨

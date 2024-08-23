@@ -1,5 +1,4 @@
 const isowner = require("../lib/checkowner.js");
-const pool = require('../lib/db.js');
 var express = require("express");
 var router = express.Router();
 
@@ -8,9 +7,11 @@ router.get("/", async (req, res) => {
     const owner = await isowner.isowner(req);
     if (owner) {
       res.redirect("/stock");
+      return;
     } 
     else {
       res.redirect("/login");
+      return;
     }
   } catch (err) {
     console.log(err);

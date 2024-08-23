@@ -1,7 +1,7 @@
 const session = require("express-session");
+const update_account = require('../lib/update_account.js');
 const pool = require("../lib/db.js");
 var express = require("express");
-const update_account = require("../lib/update_account.js");
 var router = express.Router();
 
 router.get("/login-inform", async (req, res) => {
@@ -23,7 +23,7 @@ router.get("/login-inform", async (req, res) => {
 });
 
 router.get("/account_update_N", async (req, res) => {
-  const rr = await update_account(req); // 변수명 보소
+  const rr = await update_account(req); // 변수명 보소 너무 야해요;;
   res.json({
     rr,
   });
@@ -48,7 +48,7 @@ router.get("/rank", async (req, res) => {
 module.exports = router;
 
 // router.get('/stock_price', async (req, res)=> {
-//     const db = await pool.getConnection();
+  //     const db = await pool.getConnection();
 //     try {
 //         const [result] = await db.query('select * from stock_inform');
 //         res.json({
