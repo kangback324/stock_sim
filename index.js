@@ -1,12 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const session = require('express-session');
-const pool = require('./lib/db.js')
 const FileStore = require('session-file-store')(session);
 const path = require('path');
 const fs = require('fs');
-const us = require('./lib/update_stock.js')
-const random = require('./lib/random.js')
 const http = require('http');
 const { Server } = require('socket.io');
 const updateStock = require('./lib/update_stock.js');
@@ -33,7 +30,7 @@ const login = require('./router/login.js');
 const signup = require('./router/signup.js');
 const stock = require('./router/stock.js');
 const api = require('./router/api.js');
-const admin = require('./router/admin.js');
+// const admin = require('./router/admin.js');
 
 // app.use(limiter);
 app.use(express.static( path.join(__dirname, '/public')));
@@ -47,13 +44,12 @@ app.use(session({
   // cookie: { secure: true }
 }));
 
-
 app.use('/', root);
 app.use('/login', login);
 app.use('/signup', signup);
 app.use('/stock', stock);
 app.use('/api', api);
-app.use('/admin', admin);
+// app.use('/admin', admin);
 
 app.use((req, res, next) => {
     res.status(404).send('404 not found');
@@ -69,6 +65,6 @@ app.use((err, req, res, next) => {
 });
 
 
-server.listen(8080, '0.0.0.0', () => {
+server.listen(8080, () => {
   console.log('Server running');
 });
